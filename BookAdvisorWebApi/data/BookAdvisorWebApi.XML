@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookAdvisorWebApi</name>
+    </assembly>
+    <members>
+        <member name="M:BookAdvisorWebApi.Controllers.AdviceController.LoadData">
+             <summary>
+            Loads ratings in a specific format to folder called rating.txt
+             </summary>
+             <returns>Http Ok with message finished</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.AdviceController.GetRecommendedBooks(System.Int32)">
+            <summary>
+            Returns the suggested books to user
+            </summary>
+            <param name="id">User Id</param>
+            <returns>List of books</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BooksController.GetBook(System.Int32)">
+            <summary>
+            Returns the book with the given id
+            </summary>
+            <param name="id">book id</param>
+            <returns>book</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BooksController.GetEmptyBooks">
+            <summary>
+            Returns the books that has some fields missing
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BooksController.PutBook(System.Int32,BookAdvisorWebApi.Models.Book)">
+            <summary>
+            Updates an existing book
+            </summary>
+            <param name="id">book id</param>
+            <param name="book"></param>
+            <returns>Response code</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BooksController.PostBook(BookAdvisorWebApi.Models.Book)">
+            <summary>
+            Creates a new book
+            </summary>
+            <param name="book"></param>
+            <returns>response code</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BooksController.CheckTitle(System.String)">
+            <summary>
+            Checks if the title of a book exists and returns the equivalent code
+            </summary>
+            <param name="title"></param>
+            <returns>200 if title was found,400 bad request,404 not found</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BooksController.GetCategories">
+            <summary>
+            Returns randomly 15 categories
+            </summary>
+            <returns>list of categories</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BooksController.GetBookId(System.String)">
+            <summary>
+            Returns the id of a book given the foreign id 
+            </summary>
+            <param name="id"></param>
+            <returns>0 equals not found else returns a possitive integer</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BookUserLikesController.GetBookUserLike">
+            <summary>
+            Returns all the relationships between user and book
+            </summary>
+            <returns>List of BookUserLikes</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BookUserLikesController.GetRatedBooks(System.Int32,System.Int32)">
+            <summary>
+            Returns all the rated books for a specific user
+            </summary>
+            <param name="id">User ID</param>
+            <param name="counter">Number of required books,0==all</param>
+            <returns>List of Books</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BookUserLikesController.GetEvaluation(System.Int32,System.Int32)">
+            <summary>
+            Returns the rating of a book from a user
+            </summary>
+            <param name="profid"></param>
+            <param name="bookid"></param>
+            <returns>BookUserLike Model</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BookUserLikesController.GetUnratedBooks(System.Int32,System.Int32)">
+            <summary>
+            Returns the books that user has not rate 
+            </summary>
+            <param name="id">User id</param>
+            <param name="counter">amount of books</param>
+            <returns>List of Books</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BookUserLikesController.PostBookUserLike(BookAdvisorWebApi.Models.BookUserLike)">
+            <summary>
+            Saves rating
+            </summary>
+            <param name="bookUserLike"></param>
+            <returns>Http 200 with the created book or an equivalent response code</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.BookUserLikesController.UpDateRate(System.Int32,System.Int32,BookAdvisorWebApi.Models.BookUserLike)">
+            <summary>
+            Updates a specific Rating
+            </summary>
+            <param name="bookid"></param>
+            <param name="profid"></param>
+            <param name="bookUserLike">rating</param>
+            <returns>Http 200 with empty body or an equivalent response code</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.ProfilesController.GetProfile">
+            <summary>
+            Returns all the profiles
+            </summary>
+            <returns>List of profiles</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.ProfilesController.GetProfile(System.Int32)">
+            <summary>
+            Returns a specific profile given the id
+            </summary>
+            <param name="id"></param>
+            <returns>Profile</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.ProfilesController.PutProfile(System.Int32,BookAdvisorWebApi.Models.Profile)">
+            <summary>
+            Updates the Fields of a profile
+            </summary>
+            <param name="id"></param>
+            <param name="profile"></param>
+            <returns>response code</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.ProfilesController.PostProfile(BookAdvisorWebApi.Models.Profile)">
+            <summary>
+            Creates a new Profile
+            </summary>
+            <param name="profile"></param>
+            <returns>response code</returns>
+        </member>
+        <member name="M:BookAdvisorWebApi.Controllers.ProfilesController.GetProfileId(System.String)">
+            <summary>
+            Returns a profile's id give profile's foreign id 
+            </summary>
+            <param name="id">foreign id</param>
+            <returns>integer:O==not found</returns>
+        </member>
+    </members>
+</doc>
